@@ -95,6 +95,42 @@ Organizations:
         AnchorPeers:
             - Host: peer1.marketing.workspace
               Port: 13051
+    - &Org4
+        Name: Org4MSP
+        ID: Org4MSP
+        MSPDir: crypto-config/peerOrganizations/marketing.workspace/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Org4MSP.admin', 'Org4MSP.peer', 'Org4MSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Org4MSP.admin', 'Org4MSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Org4MSP.admin')"
+
+        AnchorPeers:
+            - Host: peer1.marketing.workspace
+              Port: 13051
+    - &SupportOrg
+        Name: SupportOrgMSP
+        ID: SupportOrgMSP
+        MSPDir: crypto-config/peerOrganizations/support.workspace/msp
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('SupportOrgMSP.admin', 'SupportOrgMSP.peer', 'SupportOrgMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('SupportOrgMSP.admin', 'SupportOrgMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('SupportOrgMSP.admin')"
+        
+        AnchorPeers:
+            - Host: peer1.support.workspace
+              Port: 15051
 
 Capabilities:
     Channel: &ChannelCapabilities
@@ -173,6 +209,7 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
+                - *SupportOrg
             Capabilities:
                 <<: *ApplicationCapabilities
 
@@ -227,3 +264,4 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
+                - *SupportOrg

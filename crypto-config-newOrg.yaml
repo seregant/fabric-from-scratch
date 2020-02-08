@@ -1,0 +1,10 @@
+PeerOrgs:
+    - Name: support
+      Domain: support.workspace
+      EnableNodeOUs: true
+      Template:
+        Start: 1
+        Count: 2
+      Users:
+        Start: 1
+        Count: 1
