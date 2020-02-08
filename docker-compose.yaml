@@ -342,29 +342,29 @@ services:
       - 8051:8051
     networks:
       - byfn
-peer1.developers.workspace:
-    container_name: peer1.developers.workspace
-    extends:
-      file: base.yaml
-      service: peer-base
-    environment:
-      - CORE_PEER_ID=peer1.developers.workspace
-      - CORE_PEER_ADDRESS=peer1.developers.workspace:7051
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.developers.workspace:7052
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.developers.workspace:8051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.developers.workspace:7051
-      - CORE_PEER_LOCALMSPID=Org1MSP
-    volumes:
-        - /var/run/:/host/var/run/
-        - ./crypto-config/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/msp:/etc/hyperledger/fabric/msp
-        - ./crypto-config/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/tls:/etc/hyperledger/fabric/tls
-        - peer1.developers.workspace:/var/hyperledger/production
-    ports:
-      - 7051:7051
-    networks:
-      - byfn
+  peer1.developers.workspace:
+      container_name: peer1.developers.workspace
+      extends:
+        file: base.yaml
+        service: peer-base
+      environment:
+        - CORE_PEER_ID=peer1.developers.workspace
+        - CORE_PEER_ADDRESS=peer1.developers.workspace:7051
+        - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
+        - CORE_PEER_CHAINCODEADDRESS=peer1.developers.workspace:7052
+        - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
+        - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.developers.workspace:8051
+        - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.developers.workspace:7051
+        - CORE_PEER_LOCALMSPID=Org1MSP
+      volumes:
+          - /var/run/:/host/var/run/
+          - ./crypto-config/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/msp:/etc/hyperledger/fabric/msp
+          - ./crypto-config/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/tls:/etc/hyperledger/fabric/tls
+          - peer1.developers.workspace:/var/hyperledger/production
+      ports:
+        - 7051:7051
+      networks:
+        - byfn
 
   peer2.developers.workspace:
     container_name: peer2.developers.workspace
