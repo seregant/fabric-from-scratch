@@ -295,100 +295,6 @@ services:
     networks:
       - byfn
 
-  peer1.developers.workspace:
-    container_name: peer1.developers.workspace
-    extends:
-      file: base.yaml
-      service: peer-base
-    environment:
-      - CORE_PEER_ID=peer1.developers.workspace
-      - CORE_PEER_ADDRESS=peer1.developers.workspace:7051
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.developers.workspace:7052
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.developers.workspace:8051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.developers.workspace:7051
-      - CORE_PEER_LOCALMSPID=Org1MSP
-    volumes:
-        - /var/run/:/host/var/run/
-        - ./crypto-config/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/msp:/etc/hyperledger/fabric/msp
-        - ./crypto-config/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/tls:/etc/hyperledger/fabric/tls
-        - peer1.developers.workspace:/var/hyperledger/production
-    ports:
-      - 7051:7051
-    networks:
-      - byfn
-
-  peer2.developers.workspace:
-    container_name: peer2.developers.workspace
-    extends:
-      file: base.yaml
-      service: peer-base
-    environment:
-      - CORE_PEER_ID=peer2.developers.workspace
-      - CORE_PEER_ADDRESS=peer2.developers.workspace:8051
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:8051
-      - CORE_PEER_CHAINCODEADDRESS=peer2.developers.workspace:8052
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1. .workspace:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.developers.workspace:8051
-      - CORE_PEER_LOCALMSPID=Org1MSP
-    volumes:
-        - /var/run/:/host/var/run/
-        - ./crypto-config/peerOrganizations/developers.workspace/peers/peer2.developers.workspace/msp:/etc/hyperledger/fabric/msp
-        - ./crypto-config/peerOrganizations/developers.workspace/peers/peer2.developers.workspace/tls:/etc/hyperledger/fabric/tls
-        - peer2.developers.workspace:/var/hyperledger/production
-    ports:
-      - 8051:8051
-    networks:
-      - byfn
-  peer1.developers.workspace:
-      container_name: peer1.developers.workspace
-      extends:
-        file: base.yaml
-        service: peer-base
-      environment:
-        - CORE_PEER_ID=peer1.developers.workspace
-        - CORE_PEER_ADDRESS=peer1.developers.workspace:7051
-        - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
-        - CORE_PEER_CHAINCODEADDRESS=peer1.developers.workspace:7052
-        - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-        - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.developers.workspace:8051
-        - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.developers.workspace:7051
-        - CORE_PEER_LOCALMSPID=Org1MSP
-      volumes:
-          - /var/run/:/host/var/run/
-          - ./crypto-config/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/msp:/etc/hyperledger/fabric/msp
-          - ./crypto-config/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/tls:/etc/hyperledger/fabric/tls
-          - peer1.developers.workspace:/var/hyperledger/production
-      ports:
-        - 7051:7051
-      networks:
-        - byfn
-
-  peer2.developers.workspace:
-    container_name: peer2.developers.workspace
-    extends:
-      file: base.yaml
-      service: peer-base
-    environment:
-      - CORE_PEER_ID=peer2.developers.workspace
-      - CORE_PEER_ADDRESS=peer2.developers.workspace:8051
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:8051
-      - CORE_PEER_CHAINCODEADDRESS=peer2.developers.workspace:8052
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1. .workspace:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.developers.workspace:8051
-      - CORE_PEER_LOCALMSPID=Org1MSP
-    volumes:
-        - /var/run/:/host/var/run/
-        - ./crypto-config/peerOrganizations/developers.workspace/peers/peer2.developers.workspace/msp:/etc/hyperledger/fabric/msp
-        - ./crypto-config/peerOrganizations/developers.workspace/peers/peer2.developers.workspace/tls:/etc/hyperledger/fabric/tls
-        - peer2.developers.workspace:/var/hyperledger/production
-    ports:
-      - 8051:8051
-    networks:
-      - byfn
   peer1.support.workspace:
     container_name: peer1.support.workspace
     extends:
@@ -396,44 +302,44 @@ services:
       service: peer-base
     environment:
       - CORE_PEER_ID=peer1.support.workspace
-      - CORE_PEER_ADDRESS=peer1.support.workspace:7051
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
-      - CORE_PEER_CHAINCODEADDRESS=peer1.support.workspace:7052
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.support.workspace:8051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.support.workspace:7051
-      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_ADDRESS=peer1.support.workspace:15051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:15051
+      - CORE_PEER_CHAINCODEADDRESS=peer1.support.workspace:15052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:15052
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.support.workspace:16051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.support.workspace:15051
+      - CORE_PEER_LOCALMSPID=SupportOrgMSP
     volumes:
         - /var/run/:/host/var/run/
         - ./crypto-config/peerOrganizations/support.workspace/peers/peer1.support.workspace/msp:/etc/hyperledger/fabric/msp
         - ./crypto-config/peerOrganizations/support.workspace/peers/peer1.support.workspace/tls:/etc/hyperledger/fabric/tls
         - peer1.support.workspace:/var/hyperledger/production
     ports:
-      - 7051:7051
+      - 15051:15051
     networks:
       - byfn
     
-  peer2.developers.workspace:
+  peer2.support.workspace:
     container_name: peer2.support.workspace
     extends:
       file: base.yaml
       service: peer-base
     environment:
       - CORE_PEER_ID=peer2.support.workspace
-      - CORE_PEER_ADDRESS=peer2.support.workspace:8051
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:8051
-      - CORE_PEER_CHAINCODEADDRESS=peer2.support.workspace:8052
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1. .workspace:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.support.workspace:8051
-      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_ADDRESS=peer2.support.workspace:16051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:16051
+      - CORE_PEER_CHAINCODEADDRESS=peer2.support.workspace:16052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:16052
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1. .workspace:15051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.support.workspace:15051
+      - CORE_PEER_LOCALMSPID=SupportOrgMSP
     volumes:
         - /var/run/:/host/var/run/
         - ./crypto-config/peerOrganizations/support.workspace/peers/peer2.support.workspace/msp:/etc/hyperledger/fabric/msp
         - ./crypto-config/peerOrganizations/support.workspace/peers/peer2.support.workspace/tls:/etc/hyperledger/fabric/tls
         - peer2.support.workspace:/var/hyperledger/production
     ports:
-      - 8051:8051
+      - 16051:16051
     networks:
       - byfn
   cli:
