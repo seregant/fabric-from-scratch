@@ -1,0 +1,140 @@
+/*
+SPDX-License-Identifier: Apache-2.0
+*/
+
+'use strict';
+
+// Fabric smart contract classes
+const { Contract, Context } = require('fabric-contract-api');
+
+// PaperNet specifc classes
+const SHT = require('./sht.js');
+const SHTList = require('./shtlist.js');
+const QueryUtils = require('./query.js');
+
+/**
+ * A custom context provides easy access to list of all commercial papers
+ */
+class SHTContext extends Context {
+
+    constructor() {
+        super();
+        // All papers are held in a list of papers
+        this.shtList = new SHTList(this);
+    }
+
+}
+
+/**
+ * Define commercial paper smart contract by extending Fabric Contract class
+ *
+ */
+class SHTContract extends Contract {
+
+    constructor() {
+        // Unique name when multiple contracts per chaincode file
+        super('org.atrbpn.sht');
+    }
+
+    /**
+     * Define a custom context for commercial paper
+    */
+    createContext() {
+        return new SHTContext();
+    }
+
+    /**
+     * Instantiate to perform any setup of the ledger that might be required.
+     * @param {Context} ctx the transaction context
+     */
+    async instantiate(ctx) {
+        // No implementation required with this example
+        // It could be where data migration is performed, if necessary
+        console.log('Instantiate the contract: SHT');
+    }
+
+    /**
+     * Issue commercial paper
+     *
+     * @param {Context} ctx the transaction context
+     * @param {String} issuer commercial paper issuer
+     * @param {Integer} paperNumber paper number for this issuer
+     * @param {String} issueDateTime paper issue date
+     * @param {String} maturityDateTime paper maturity date
+     * @param {Integer} faceValue face value of paper
+    */
+    async create(ctx, nomorSHT, nomorHak, nib, pemegangHT) {
+
+        // create an instance of the paper
+        let paper = SHT.createInstance(nomorSHT, nomorHak, nib, pemegangHT);
+        paper.setNormal();
+        
+        // Add the invoking CN, to the Paper state for reporting purposes later on
+        let invokingId = await this.getInvoker(ctx);
+        paper.setCreator(invokingId);
+
+        // Add the paper to the list of all similar commercial papers in the ledger world state
+        await ctx.shtList.addPaper(paper);
+
+        // Must return a serialized paper to caller of smart contract
+        return paper;
+    }
+
+    async query(ctx, nomorSHT) {
+
+        // Retrieve the current paper using key fields provided
+        let paperKey = SHT.makeKey([nomorSHT]);
+        let paper = await ctx.shtList.getPaper(paperKey);
+        
+        return paper;
+    }
+    
+    /**
+    * grab the invoking CN from the X509 transactor cert
+    * @param {Context} ctx the transaction context
+    */
+
+    async getInvoker(ctx) {
+
+        // Use the Client Identity object to get the invoker info.
+        let cid = ctx.clientIdentity;
+        let id = cid.getID(); // X509 Certificate invoker is in CN form
+        let CN = id.substring(id.indexOf("CN=") + 3, id.lastIndexOf("::"));
+        return CN;
+    }
+
+    /**
+    * queryHist commercial paper
+    * @param {Context} ctx the transaction context
+    * @param {String} issuer commercial paper issuer
+    * @param {Integer} paperNumber paper number for this issuer
+    */
+    async queryHist(ctx, nomorSHT) {
+
+        // Get a key to be used for History query
+        let cpKey = SHT.makeKey([nomorSHT]);
+        let myObj = new QueryUtils(ctx, 'org.atrbpn.shtlist');
+        let results = await myObj.getHistory(cpKey);
+        //console.log('main: queryHist was called and returned ' + JSON.stringify(results) );
+        return results;
+
+    }
+
+    /**
+    * queryOwner commercial paper
+    * @param {Context} ctx the transaction context
+    * @param {String} issuer commercial paper issuer
+    * @param {Integer} paperNumber paper number for this issuer
+    */
+    async queryNomorHak(ctx, nomorHak) {
+
+        let myObj = new QueryUtils(ctx, 'org.atrbpn.shtlist');
+        let results = await myObj.queryKeyByNomorHak(nomorHak);
+
+        return results;
+    }
+    
+
+}
+
+module.exports = SHTContract;
