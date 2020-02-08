@@ -51,10 +51,10 @@
 ```
     #export variables untuk konfigurasi fabric-tools agar dapat berkomunikasi dengan network (path sudah disesuaikan pada docker-compose.yaml)
     
-    CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/developers.workspace/users/Admin@developers.workspace/msp
-    CORE_PEER_ADDRESS=peer1.developers.workspace:7051
-    CORE_PEER_LOCALMSPID="Org1MSP"
-    CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/tls/ca.crt
+    export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/developers.workspace/users/Admin@developers.workspace/msp
+    export CORE_PEER_ADDRESS=peer1.developers.workspace:7051
+    export CORE_PEER_LOCALMSPID="Org1MSP"
+    export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/developers.workspace/peers/peer1.developers.workspace/tls/ca.crt
 
     #Buat channel baru
     
