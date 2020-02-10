@@ -1,0 +1,107 @@
+[36m2020-02-08 13:57:13.791 UTC [viperutil] getKeysRecursively -> DEBU 001[0m Found map[string]interface{} value for peer.BCCSP
+[36m2020-02-08 13:57:13.791 UTC [viperutil] unmarshalJSON -> DEBU 002[0m Unmarshal JSON: value cannot be unmarshalled: invalid character 'S' looking for beginning of value
+[36m2020-02-08 13:57:13.791 UTC [viperutil] getKeysRecursively -> DEBU 003[0m Found real value for peer.BCCSP.Default setting to string SW
+[36m2020-02-08 13:57:13.791 UTC [viperutil] getKeysRecursively -> DEBU 004[0m Found map[string]interface{} value for peer.BCCSP.SW
+[36m2020-02-08 13:57:13.791 UTC [viperutil] unmarshalJSON -> DEBU 005[0m Unmarshal JSON: value cannot be unmarshalled: invalid character 'S' looking for beginning of value
+[36m2020-02-08 13:57:13.791 UTC [viperutil] getKeysRecursively -> DEBU 006[0m Found real value for peer.BCCSP.SW.Hash setting to string SHA2
+[36m2020-02-08 13:57:13.791 UTC [viperutil] unmarshalJSON -> DEBU 007[0m Unmarshal JSON: value is not a string: 256
+[36m2020-02-08 13:57:13.791 UTC [viperutil] getKeysRecursively -> DEBU 008[0m Found real value for peer.BCCSP.SW.Security setting to int 256
+[36m2020-02-08 13:57:13.791 UTC [viperutil] getKeysRecursively -> DEBU 009[0m Found map[string]interface{} value for peer.BCCSP.SW.FileKeyStore
+[36m2020-02-08 13:57:13.791 UTC [viperutil] unmarshalJSON -> DEBU 00a[0m Unmarshal JSON: value cannot be unmarshalled: unexpected end of JSON input
+[36m2020-02-08 13:57:13.791 UTC [viperutil] getKeysRecursively -> DEBU 00b[0m Found real value for peer.BCCSP.SW.FileKeyStore.KeyStore setting to string 
+[36m2020-02-08 13:57:13.792 UTC [viperutil] getKeysRecursively -> DEBU 00c[0m Found map[string]interface{} value for peer.BCCSP.PKCS11
+[36m2020-02-08 13:57:13.792 UTC [viperutil] unmarshalJSON -> DEBU 00d[0m Unmarshal JSON: value is not a string: <nil>
+[36m2020-02-08 13:57:13.792 UTC [viperutil] getKeysRecursively -> DEBU 00e[0m Found real value for peer.BCCSP.PKCS11.Security setting to <nil> <nil>
+[36m2020-02-08 13:57:13.792 UTC [viperutil] getKeysRecursively -> DEBU 00f[0m Found map[string]interface{} value for peer.BCCSP.PKCS11.FileKeyStore
+[36m2020-02-08 13:57:13.792 UTC [viperutil] unmarshalJSON -> DEBU 010[0m Unmarshal JSON: value is not a string: <nil>
+[36m2020-02-08 13:57:13.792 UTC [viperutil] getKeysRecursively -> DEBU 011[0m Found real value for peer.BCCSP.PKCS11.FileKeyStore.KeyStore setting to <nil> <nil>
+[36m2020-02-08 13:57:13.793 UTC [viperutil] unmarshalJSON -> DEBU 012[0m Unmarshal JSON: value is not a string: <nil>
+[36m2020-02-08 13:57:13.793 UTC [viperutil] getKeysRecursively -> DEBU 013[0m Found real value for peer.BCCSP.PKCS11.Library setting to <nil> <nil>
+[36m2020-02-08 13:57:13.793 UTC [viperutil] unmarshalJSON -> DEBU 014[0m Unmarshal JSON: value is not a string: <nil>
+[36m2020-02-08 13:57:13.793 UTC [viperutil] getKeysRecursively -> DEBU 015[0m Found real value for peer.BCCSP.PKCS11.Label setting to <nil> <nil>
+[36m2020-02-08 13:57:13.793 UTC [viperutil] unmarshalJSON -> DEBU 016[0m Unmarshal JSON: value is not a string: <nil>
+[36m2020-02-08 13:57:13.793 UTC [viperutil] getKeysRecursively -> DEBU 017[0m Found real value for peer.BCCSP.PKCS11.Pin setting to <nil> <nil>
+[36m2020-02-08 13:57:13.793 UTC [viperutil] unmarshalJSON -> DEBU 018[0m Unmarshal JSON: value is not a string: <nil>
+[36m2020-02-08 13:57:13.794 UTC [viperutil] getKeysRecursively -> DEBU 019[0m Found real value for peer.BCCSP.PKCS11.Hash setting to <nil> <nil>
+[36m2020-02-08 13:57:13.794 UTC [viperutil] EnhancedExactUnmarshalKey -> DEBU 01a[0m map[peer.BCCSP:map[Default:SW PKCS11:map[FileKeyStore:map[KeyStore:<nil>] Hash:<nil> Label:<nil> Library:<nil> Pin:<nil> Security:<nil>] SW:map[FileKeyStore:map[KeyStore:] Hash:SHA2 Security:256]]]
+[36m2020-02-08 13:57:13.794 UTC [bccsp_sw] openKeyStore -> DEBU 01b[0m KeyStore opened at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore]...done
+[36m2020-02-08 13:57:13.794 UTC [bccsp] initBCCSP -> DEBU 01c[0m Initialize BCCSP [SW]
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 01d[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 01e[0m Inspecting file /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/Admin@org2.example.com-cert.pem
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 01f[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/cacerts
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 020[0m Inspecting file /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/cacerts/ca.org2.example.com-cert.pem
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 021[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/admincerts
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 022[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/intermediatecerts
+[36m2020-02-08 13:57:13.794 UTC [msp] getMspConfig -> DEBU 023[0m Intermediate certs folder not found at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/intermediatecerts]. Skipping. [stat /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/intermediatecerts: no such file or directory]
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 024[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/tlscacerts
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 025[0m Inspecting file /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/tlscacerts/tlsca.org2.example.com-cert.pem
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 026[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/tlsintermediatecerts
+[36m2020-02-08 13:57:13.794 UTC [msp] getMspConfig -> DEBU 027[0m TLS intermediate certs folder not found at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/tlsintermediatecerts]. Skipping. [stat /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/tlsintermediatecerts: no such file or directory]
+[36m2020-02-08 13:57:13.794 UTC [msp] getPemMaterialFromDir -> DEBU 028[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/crls
+[36m2020-02-08 13:57:13.794 UTC [msp] getMspConfig -> DEBU 029[0m crls folder not found at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/crls]. Skipping. [stat /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/crls: no such file or directory]
+[36m2020-02-08 13:57:13.794 UTC [msp] getMspConfig -> DEBU 02a[0m Loading NodeOUs
+[36m2020-02-08 13:57:13.795 UTC [msp] newBccspMsp -> DEBU 02b[0m Creating BCCSP-based MSP instance
+[36m2020-02-08 13:57:13.795 UTC [msp] New -> DEBU 02c[0m Creating Cache-MSP instance
+[36m2020-02-08 13:57:13.795 UTC [msp] loadLocaMSP -> DEBU 02d[0m Created new local MSP
+[36m2020-02-08 13:57:13.795 UTC [msp] Setup -> DEBU 02e[0m Setting up MSP instance Org2MSP
+[36m2020-02-08 13:57:13.795 UTC [msp.identity] newIdentity -> DEBU 02f[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+MIICUDCCAfegAwIBAgIQJYYgwXUFP7+51kKBwm6fuDAKBggqhkjOPQQDAjBzMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEZMBcGA1UEChMQb3JnMi5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu
+b3JnMi5leGFtcGxlLmNvbTAeFw0yMDAyMDgxMzUxMDBaFw0zMDAyMDUxMzUxMDBa
+MHMxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T
+YW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmcyLmV4YW1wbGUuY29tMRwwGgYDVQQD
+ExNjYS5vcmcyLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE
+yQrBpy1OItNEu3Ki3txJv1QD83bq76piUzsTUe5ML36OZppJ9s+L47k0k5r6E/2Y
+o/3ys8p07WHAxLSapP9SsaNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQG
+CCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCDP
+bCGZNFZzh/tAzftOUDqrqAKuNTZEH88esb4wRaJqljAKBggqhkjOPQQDAgNHADBE
+AiAbBvgk7PFDtseAc1dP2FUIhLYuA2YWAJFy2Nz8VD7/CwIgGMoAPH7S0AKftD+K
+cV1AzQK7gp0mVnilkEWZ7nRWJwA=
+-----END CERTIFICATE-----
+[36m2020-02-08 13:57:13.795 UTC [msp.identity] newIdentity -> DEBU 030[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+MIICKDCCAc+gAwIBAgIQYwmfktaFyBdqvDncA06DRjAKBggqhkjOPQQDAjBzMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEZMBcGA1UEChMQb3JnMi5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu
+b3JnMi5leGFtcGxlLmNvbTAeFw0yMDAyMDgxMzUxMDBaFw0zMDAyMDUxMzUxMDBa
+MGsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T
+YW4gRnJhbmNpc2NvMQ4wDAYDVQQLEwVhZG1pbjEfMB0GA1UEAwwWQWRtaW5Ab3Jn
+Mi5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOCM8mgvCUzE
+pc+bij5WceCdHUwMtceiNjHhpfJpNtQDtGtVS9muADftfG+1IxuRw/OFkGh2AvCS
+Gok43wOqkM2jTTBLMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1Ud
+IwQkMCKAIM9sIZk0VnOH+0DN+05QOquoAq41NkQfzx6xvjBFomqWMAoGCCqGSM49
+BAMCA0cAMEQCIBt+vCSSVSMnKbC33u6cyP9mezEqUX0HXDw2+RF1Lma+AiACNYB8
+DV9hZWU9YEP2eppoPD2vC49T5H8XFzbK6ClE/w==
+-----END CERTIFICATE-----
+[36m2020-02-08 13:57:13.795 UTC [bccsp_sw] loadPrivateKey -> DEBU 031[0m Loading private key [4af3fd05bf8bccc4f70cc6d77ca13b23cc84834f4a3d37ea7dc2b9761a79fceb] at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/4af3fd05bf8bccc4f70cc6d77ca13b23cc84834f4a3d37ea7dc2b9761a79fceb_sk]...
+[36m2020-02-08 13:57:13.796 UTC [msp.identity] newIdentity -> DEBU 032[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+MIICKDCCAc+gAwIBAgIQYwmfktaFyBdqvDncA06DRjAKBggqhkjOPQQDAjBzMQsw
+CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+YW5jaXNjbzEZMBcGA1UEChMQb3JnMi5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu
+b3JnMi5leGFtcGxlLmNvbTAeFw0yMDAyMDgxMzUxMDBaFw0zMDAyMDUxMzUxMDBa
+MGsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T
+YW4gRnJhbmNpc2NvMQ4wDAYDVQQLEwVhZG1pbjEfMB0GA1UEAwwWQWRtaW5Ab3Jn
+Mi5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOCM8mgvCUzE
+pc+bij5WceCdHUwMtceiNjHhpfJpNtQDtGtVS9muADftfG+1IxuRw/OFkGh2AvCS
+Gok43wOqkM2jTTBLMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1Ud
+IwQkMCKAIM9sIZk0VnOH+0DN+05QOquoAq41NkQfzx6xvjBFomqWMAoGCCqGSM49
+BAMCA0cAMEQCIBt+vCSSVSMnKbC33u6cyP9mezEqUX0HXDw2+RF1Lma+AiACNYB8
+DV9hZWU9YEP2eppoPD2vC49T5H8XFzbK6ClE/w==
+-----END CERTIFICATE-----
+[36m2020-02-08 13:57:13.796 UTC [msp] setupSigningIdentity -> DEBU 033[0m Signing identity expires at 2030-02-05 13:51:00 +0000 UTC
+[36m2020-02-08 13:57:13.797 UTC [grpc] DialContext -> DEBU 034[0m parsed scheme: ""
+[36m2020-02-08 13:57:13.797 UTC [grpc] DialContext -> DEBU 035[0m scheme "" not registered, fallback to default scheme
+[36m2020-02-08 13:57:13.797 UTC [grpc] watcher -> DEBU 036[0m ccResolverWrapper: sending new addresses to cc: [{peer1.org2.example.com:10051 0  <nil>}]
+[36m2020-02-08 13:57:13.797 UTC [grpc] switchBalancer -> DEBU 037[0m ClientConn switching balancer to "pick_first"
+[36m2020-02-08 13:57:13.797 UTC [grpc] HandleSubConnStateChange -> DEBU 038[0m pickfirstBalancer: HandleSubConnStateChange: 0xc00020a980, CONNECTING
+[36m2020-02-08 13:57:13.803 UTC [grpc] HandleSubConnStateChange -> DEBU 039[0m pickfirstBalancer: HandleSubConnStateChange: 0xc00020a980, READY
+[36m2020-02-08 13:57:13.804 UTC [grpc] DialContext -> DEBU 03a[0m parsed scheme: ""
+[36m2020-02-08 13:57:13.804 UTC [grpc] DialContext -> DEBU 03b[0m scheme "" not registered, fallback to default scheme
+[36m2020-02-08 13:57:13.804 UTC [grpc] watcher -> DEBU 03c[0m ccResolverWrapper: sending new addresses to cc: [{peer1.org2.example.com:10051 0  <nil>}]
+[36m2020-02-08 13:57:13.804 UTC [grpc] switchBalancer -> DEBU 03d[0m ClientConn switching balancer to "pick_first"
+[36m2020-02-08 13:57:13.804 UTC [grpc] HandleSubConnStateChange -> DEBU 03e[0m pickfirstBalancer: HandleSubConnStateChange: 0xc00051b180, CONNECTING
+[36m2020-02-08 13:57:13.807 UTC [grpc] HandleSubConnStateChange -> DEBU 03f[0m pickfirstBalancer: HandleSubConnStateChange: 0xc00051b180, READY
+[36m2020-02-08 13:57:13.808 UTC [msp] GetDefaultSigningIdentity -> DEBU 040[0m Obtaining default signing identity
+[36m2020-02-08 13:57:13.809 UTC [msp.identity] Sign -> DEBU 041[0m Sign: plaintext: 0ABF070A6708031A0C08B9FCFAF10510...6D7963631A0A0A0571756572790A0161 
+[36m2020-02-08 13:57:13.809 UTC [msp.identity] Sign -> DEBU 042[0m Sign: digest: 733BD674B93FD876FD29F061814BF44FA52935B4F570E2052281004ED6138E94 
+90
