@@ -209,7 +209,7 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
-                - *SupportOrg
+                # - *SupportOrg
             Capabilities:
                 <<: *ApplicationCapabilities
 
@@ -264,4 +264,4 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
-                - *SupportOrg
+                # - *SupportOrg
