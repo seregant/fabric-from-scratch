@@ -113,24 +113,6 @@ Organizations:
         AnchorPeers:
             - Host: peer1.marketing.workspace
               Port: 13051
-    - &SupportOrg
-        Name: SupportOrgMSP
-        ID: SupportOrgMSP
-        MSPDir: crypto-config/peerOrganizations/support.workspace/msp
-        Policies:
-            Readers:
-                Type: Signature
-                Rule: "OR('SupportOrgMSP.admin', 'SupportOrgMSP.peer', 'SupportOrgMSP.client')"
-            Writers:
-                Type: Signature
-                Rule: "OR('SupportOrgMSP.admin', 'SupportOrgMSP.client')"
-            Admins:
-                Type: Signature
-                Rule: "OR('SupportOrgMSP.admin')"
-        
-        AnchorPeers:
-            - Host: peer1.support.workspace
-              Port: 15051
 
 Capabilities:
     Channel: &ChannelCapabilities
